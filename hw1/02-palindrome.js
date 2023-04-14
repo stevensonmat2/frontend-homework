@@ -12,7 +12,7 @@ function handleInput(e) {
 
   if (input < 0) {
     message.textContent = "Invalid input! Postive numbers only";
-    message.style.color = "black";
+    message.style.color = "red";
   } else {
     if (checkForPalindrome(input)) {
       message.textContent = "This is a palindrome!";
