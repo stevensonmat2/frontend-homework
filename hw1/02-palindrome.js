@@ -1,36 +1,34 @@
-const elem = document.querySelector("input");
-const element = document.querySelector("#validation-message");
-const message = document.createElement("p");
-message.textContent = "No input";
-message.style.color = "black";
-element.append(message);
+const elem = document.querySelector('input');
+const element = document.querySelector('#validation-message');
+const message = document.createElement('p');
 
-elem.addEventListener("input", handleInput);
+function checkForPalindrome(number) {
+  const numberString = number.toString();
+  const splitString = numberString.split('');
+  const reverseSplit = splitString.reverse();
+  const reversedString = reverseSplit.join('');
+
+  return numberString === reversedString;
+}
 
 function handleInput(e) {
-  let input = e.target.value;
+  const input = e.target.value;
 
   if (input < 0) {
-    message.textContent = "Invalid input! Postive numbers only";
-    message.style.color = "red";
+    message.textContent = 'Invalid input! Postive numbers only';
+    message.className = 'text-warning';
+  } else if (checkForPalindrome(input)) {
+    message.textContent = 'This is a palindrome!';
+    message.className = 'text-success';
   } else {
-    if (checkForPalindrome(input)) {
-      message.textContent = "This is a palindrome!";
-      message.style.color = "green";
-    } else {
-      message.textContent = "This is not a palindrome!";
-      message.style.color = "red";
-    }
+    message.textContent = 'This is not a palindrome!';
+    message.className = 'text-danger';
   }
 
   element.append(message);
 }
 
-function checkForPalindrome(number) {
-  let numberString = number.toString();
-  let splitString = numberString.split("");
-  let reverseSplit = splitString.reverse();
-  let reversedString = reverseSplit.join("");
-
-  return numberString == reversedString;
-}
+message.textContent = 'No input';
+message.classname = 'text-dark';
+element.append(message);
+elem.addEventListener('input', handleInput);
