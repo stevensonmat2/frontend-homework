@@ -5,8 +5,8 @@ function handleSubmit(e) {
   e.preventDefault();
   const elementNames = ['full-name', 'email', 'registration-status', 'comments'];
   const formElements = form.elements;
-  for (let i = 0; i < elementNames.length; i++) {
-    const element = formElements[elementNames[i]];
+  for (const e in elementNames) {
+    const element = formElements[elementNames[e]];
     console.log(`${element.name}: ${element.value}`);
   }
 

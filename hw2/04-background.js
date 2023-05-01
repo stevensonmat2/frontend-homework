@@ -16,25 +16,29 @@ function changeBackgroundColor() {
   bodyElement.style.backgroundColor = randomColor;
 }
 
-function handleButtonClick() {
+function handleButtonClick(event) {
   const interval = input.value;
   const buttonClasses = button.classList;
 
   if (!interval) {
+    event.preventDefault();
+    alert('Enter integer values only!!!');
     return;
   }
-
+  clearInterval(intervalID);
   if (buttonClasses.contains('btn-primary')) {
     intervalID = setInterval(changeBackgroundColor, interval * 1000);
     buttonClasses.remove('btn-primary');
     buttonClasses.add('btn-danger');
-    button.textContent = 'stop';
+    button.textContent = 'Stop';
   } else {
-    clearInterval(intervalID);
     buttonClasses.add('btn-primary');
     buttonClasses.remove('btn-danger');
-    button.textContent = 'start';
+    button.textContent = 'Start';
   }
 }
 
+window.addEventListener('load', () => {
+  intervalID = setInterval(changeBackgroundColor, 3000);
+});
 button.addEventListener('click', handleButtonClick);

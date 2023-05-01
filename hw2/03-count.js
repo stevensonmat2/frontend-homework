@@ -10,7 +10,7 @@ function handleKeyDown() {
   }
   const highlightedText = searchableText.replaceAll(
     searchValue,
-    `<mark class='font-weight-normal' style='background-color: yellow;'>${searchValue}</mark>`,
+    `<span style='background-color: yellow;'>${searchValue}</span>`,
   );
   textArea.innerHTML = highlightedText;
 }
