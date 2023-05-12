@@ -8,7 +8,7 @@ function addCharacters(characters) {
     const charCard = document.createElement('div');
     const image = document.createElement('img');
     const textBox = document.createElement('div');
-    const fullName = document.createElement('h4');
+    const fullName = document.createElement('h2');
     const title = document.createElement('p');
 
     charCard.classList.add('d-flex', 'flex-column', 'align-items-center', 'justify-content-center', 'p-2');
@@ -30,6 +30,7 @@ function addCharacters(characters) {
     textBox.style.height = '150px';
 
     image.src = character.imageUrl;
+    image.alt = `${character.fullName}`;
     image.style.width = '225px';
     image.style.height = '240px';
 

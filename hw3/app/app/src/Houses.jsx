@@ -78,7 +78,7 @@ function Houses(props) {
   };
 
   return (
-    <div className='w-50'>
+    <div className='d-flex flex-column justify-content-center align-items-center m-2'>
       <h1 className='text-center'>{title}</h1>
       <div>
         <Doughnut data={data} />

@@ -22,11 +22,20 @@ function Search(props) {
       }
       return '';
     });
+
+    console.log(results)
+    if (results.length === 0) {
+      return (
+        <div className='d-flex flex-column justify-content-center align-items-center m-2'>
+          <p>No results found</p>
+        </div>)
+    };
+
     return results.map((character) => (
       <div className='d-flex flex-column justify-content-center align-items-center m-2'>
         <img
           src={character.imageUrl}
-          alt='a GOT character'
+          alt={character.fullName}
           width='250px'
           height='300px'
         />
