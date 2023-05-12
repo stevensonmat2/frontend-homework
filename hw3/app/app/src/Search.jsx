@@ -18,6 +18,7 @@ function Search(props) {
   function executeSearch() {
     let results = characters.filter((character) => {
       if (character.fullName.toLowerCase().includes(search)) {
+        character.alt = `picture of ${character.fullName}`
         return character;
       }
       return '';
@@ -35,7 +36,7 @@ function Search(props) {
       <div className='d-flex flex-column justify-content-center align-items-center m-2'>
         <img
           src={character.imageUrl}
-          alt={character.fullName}
+          alt={character.alt}
           width='250px'
           height='300px'
         />

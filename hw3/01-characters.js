@@ -11,7 +11,7 @@ function addCharacters(characters) {
     const fullName = document.createElement('h2');
     const title = document.createElement('p');
 
-    charCard.classList.add('d-flex', 'flex-column', 'align-items-center', 'justify-content-center', 'p-2');
+    charCard.classList.add('d-flex', 'flex-column', 'align-items-center', 'p-2');
     charCard.addEventListener('mouseenter', (event) => {
       const element = event.target;
       element.style.color = 'white';
@@ -25,18 +25,23 @@ function addCharacters(characters) {
     charCard.style.width = '242px';
     charCard.style.height = '450px';
 
-    textBox.classList.add('d-flex', 'flex-column', 'justify-content-center', 'align-items-center');
+    textBox.classList.add('d-flex', 'flex-column', 'align-items-center', 'p-2');
     textBox.style.width = '200px';
     textBox.style.height = '150px';
 
     image.src = character.imageUrl;
-    image.alt = `${character.fullName}`;
+    image.alt = `picture of ${character.fullName}`;
     image.style.width = '225px';
     image.style.height = '240px';
 
     fullName.textContent = character.fullName;
+    fullName.style.textAlign = 'center';
+    fullName.style.fontWeight = 'bolder';
+    fullName.style.fontSize = '25px';
     title.textContent = character.title;
     title.style.textAlign = 'center';
+    title.style.fontWeight = 'bolder';
+
 
     charCard.append(image);
     textBox.append(fullName);
