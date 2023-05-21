@@ -53,7 +53,7 @@ function Search(props) {
       <form onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
-          class='form-control'
+          className='form-control'
           type='search'
           placeholder='Search characters'
           aria-label='Search'
